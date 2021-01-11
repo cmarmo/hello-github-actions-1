@@ -3,11 +3,6 @@ name: Check Changelog
 on:
   push:
 
-outputs:
-    check: 
-            description: "Check Changelog result"
-            value: ${{ steps.check-changelog.outputs.result }}
-
 jobs:
   check:
     runs-on: ubuntu-latest
