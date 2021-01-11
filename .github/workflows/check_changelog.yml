@@ -1,8 +1,7 @@
 name: Check Changelog
 
 on:
-  pull_request:
-    types: submitted
+  push:
 
 inputs:
   pr-number:
