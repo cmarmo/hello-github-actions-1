@@ -3,16 +3,6 @@ name: Check Changelog
 on:
   push:
 
-inputs:
-  pr-number:
-    description: "Pull request number"
-    required: True
-    default: ${{ github.event.pull_request.number }}
-  pr-author:
-    description: "Pull request author"
-    required: True
-    default: ${{ github.event.pull_request.sender }}
-
 outputs:
     check: 
             description: "Check Changelog result"
@@ -23,5 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: check-changelog
-        run: $GITHUB_ACTION_PATH/check_changelog/script.sh
-        shell: bash
+        uses: check_changelog/script.sh
+        with:
+          pr-number: ${{ github.event.pull_request.number }}
+          pr-author: ${{ github.event.pull_request.sender }}
