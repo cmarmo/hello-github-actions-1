@@ -6,7 +6,7 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
-    if: not(contains(github.event.pull_request.labels.*.name, 'no-changelog'))
+    if: contains(github.event.pull_request.labels.*.name, 'no-changelog') == False
     steps:
       - name: Get PR number and author
         run: |
