@@ -23,5 +23,6 @@ jobs:
             echo $result
           else
           then
+            echo "Changelog entry is missing."
             exit 1
           fi
